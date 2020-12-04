@@ -10,6 +10,6 @@ description: >
   Get music metadata from MusicBrainz
 category: "Metadata"
 artifacts:
-- "Jellyfin.Plugins.MusicBrainz.dll"
+- "Jellyfin.Plugin.MusicBrainz.dll"
 changelog: >
   Remove from Jellyfin core.

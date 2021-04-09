@@ -38,7 +38,7 @@ namespace Jellyfin.Plugin.MusicBrainz.Dtos
         /// <summary>
         /// Gets the artists.
         /// </summary>
-        public List<ValueTuple<string?, string?>> Artists { get; } = new List<ValueTuple<string?, string?>>();
+        public IList<ValueTuple<string?, string?>> Artists { get; } = new List<ValueTuple<string?, string?>>();
 
         /// <summary>
         /// Parse xml to a list of release results.

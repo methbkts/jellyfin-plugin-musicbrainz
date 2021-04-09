@@ -131,10 +131,10 @@ namespace Jellyfin.Plugin.MusicBrainz
         }
 
         /// <inheritdoc />
-        public async Task<MetadataResult<MusicAlbum>> GetMetadata(AlbumInfo id, CancellationToken cancellationToken)
+        public async Task<MetadataResult<MusicAlbum>> GetMetadata(AlbumInfo info, CancellationToken cancellationToken)
         {
-            var releaseId = id.GetReleaseId();
-            var releaseGroupId = id.GetReleaseGroupId();
+            var releaseId = info.GetReleaseId();
+            var releaseGroupId = info.GetReleaseGroupId();
 
             var result = new MetadataResult<MusicAlbum>
             {
@@ -150,13 +150,13 @@ namespace Jellyfin.Plugin.MusicBrainz
 
             if (string.IsNullOrWhiteSpace(releaseId))
             {
-                var artistMusicBrainzId = id.GetMusicBrainzArtistId();
+                var artistMusicBrainzId = info.GetMusicBrainzArtistId();
                 if (artistMusicBrainzId == null)
                 {
                     return result;
                 }
 
-                var releaseResult = await GetReleaseResult(artistMusicBrainzId, id.GetAlbumArtist(), id.Name, cancellationToken).ConfigureAwait(false);
+                var releaseResult = await GetReleaseResult(artistMusicBrainzId, info.GetAlbumArtist(), info.Name, cancellationToken).ConfigureAwait(false);
 
                 if (releaseResult != null)
                 {

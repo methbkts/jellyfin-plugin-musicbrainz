@@ -1,6 +1,7 @@
 ---
 name: "MusicBrainz"
 guid: "8c95c4d2-e50c-4fb0-a4f3-6c06ff0f9a1a"
+imageUrl: "https://repo.jellyfin.org/releases/plugin/images/jellyfin-plugin-musicbrainz.png"
 version: "1.0.0.0"
 targetAbi: "10.7.0.0"
 framework: "net5.0"
@@ -10,6 +11,7 @@ description: >
   Get music metadata from MusicBrainz
 category: "Metadata"
 artifacts:
-- "Jellyfin.Plugin.MusicBrainz.dll"
-changelog: >
-  Remove from Jellyfin core.
+  - "Jellyfin.Plugin.MusicBrainz.dll"
+changelog: |
+  - Initial Release
+  - Split of from Jellyfin core.
